@@ -1,6 +1,6 @@
 # ssMutat-Methy--Driver-Modules
 -------------------------References----------------------------------------
-# Here is the source code of the construction of samples-specific mutation driver modules and methylation aberration driver module （ssMutat-DM and ssMethy-DM).
+# Here is the source code of the construction of samples-specific mutation driver modules and methylation aberration driver module (ssMutat-DM and ssMethy-DM).
 
 References:
 Yuanyuan Chen, Haitao Li, Xiao Sun, Construction and analysis of sample-specific driver modules for breast cancer.
