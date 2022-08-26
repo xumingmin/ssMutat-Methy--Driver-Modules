@@ -25,13 +25,10 @@ can be constructed using the 2-order network theory and hub-gene theory.
 
 
 # Example
-############################################################################################
-
-@ Example
 This text provides an example of construction sample-specific driver modules (including sample-specific mutation driver module (ssMutat-DM), sample-specific methylation aberration driver module (ssMethy-DM) and sample-specific co-driver module (ssMethy-DM) for each breast cancer sample.
 
 ############################################################################################
-
+@ Example:
 # load expression data and background network
 load(file="....../data/normal.Rdata")   #reference samples
 load(file="....../data/cancer.Rdata")   #cancer samples
@@ -80,7 +77,7 @@ write.table(ssco.DM, file="ssco.DM.txt", row.names = F, col.names = F, quote=F)
 edges <- c(t(ssco.DM))
 ssco.DM.net <- graph(edges, n = ncol(ssco.DM), directed = F)
 plot(ssco.DM.net)
-
+############################################################################################
 
 
 
