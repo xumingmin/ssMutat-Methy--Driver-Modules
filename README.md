@@ -28,6 +28,7 @@ can be constructed using the 2-order network theory and hub-gene theory.
 This text provides an example of construction sample-specific driver modules (including sample-specific mutation driver module (ssMutat-DM), sample-specific methylation aberration driver module (ssMethy-DM) and sample-specific co-driver module (ssMethy-DM) for each breast cancer sample.
 
 ############################################################################################
+
 @ Example:
 # load expression data and background network
 load(file="....../data/normal.Rdata")   #reference samples
