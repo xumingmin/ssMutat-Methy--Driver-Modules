@@ -1,12 +1,11 @@
 # ssMutat-Methy--Driver-Modules
--------------------------References----------------------------------------
+
 # Here is the source code of the construction of samples-specific mutation driver modules and methylation aberration driver module (ssMutat-DM and ssMethy-DM).
 
-References:
+# References:
 Yuanyuan Chen, Haitao Li, Xiao Sun, Construction and analysis of sample-specific driver modules for breast cancer.
 
-
---------------------------Description---------------------------------------------
+# Description:
 The functional impact of somatic mutation and methylation aberration at an individual level is an important research direction to implement precision medicine. 
 More and more studies have shown that the perturbation of gene interaction network provides a fundamental link between genotype (or epigenotype) and phenotype. 
 However, functional effects on biological networks for individual mutations, especially for individual methylation aberration, are largely unknown. 
