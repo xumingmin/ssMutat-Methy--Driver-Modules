@@ -26,15 +26,11 @@ can be constructed using the 2-order network theory and hub-gene theory.
 
 # Example
 ############################################################################################
-#' @Example
-#' This text provides an example of construction sample-specific driver modules 
-#' (including sample-specific mutation driver module (ssMutat-DM), 
-#' sample-specific methylation aberration driver module (ssMethy-DM) 
-#' and sample-specific co-driver module (ssMethy-DM)) 
-#' for each breast cancer sample.
+@Example
+This text provides an example of construction sample-specific driver modules (including sample-specific mutation driver module (ssMutat-DM), sample-specific methylation aberration driver module (ssMethy-DM) and sample-specific co-driver module (ssMethy-DM) for each breast cancer sample.
 ############################################################################################
 
-##########load expression data and background network
+# load expression data and background network
 load(file="....../data/normal.Rdata")   #reference samples
 load(file="....../data/cancer.Rdata")   #cancer samples
 net <- read.table(file="....../data/back.net.txt", header = T, sep="\t",stringsAsFactors = F) #background network
@@ -44,30 +40,26 @@ net <- igraph::graph_from_data_frame(net, directed = F, vertices = NULL)
 net <- igraph::simplify(net, remove.loops = T)
 net <- as.data.frame(igraph::get.edgelist(net))
 
-########Construct sample-specific network(SSN) for 10 random selected breast cancer samples
+# Construct sample-specific network(SSN) for 10 random selected breast cancer samples
 n <- 10  #Number of randomly selected samples
 set.seed(123445)
 cancer <- cancer[, sample(1:1097, n)]
 SSN <- PCC(normal, cancer, net, n.kernal= 2)
 save(SSN, file="SSN.Rdata")
 
-#########convert the mutation data to a mutation matrix
+# convert the mutation data to a mutation matrix
 mutation <- read.table(file="....../data/TCGA-BRCA.mutect2_snv.tsv", header = T, sep="\t", stringsAsFactors = F) #mutation data
 mutation.matrix <- mutation2matrix(mutation) #mutation matrix
 
-########Identify the aberrantly methylated genes for each sample, 
-########and convert the hetylation data to a methylation aberrantion matrix
+# Identify the aberrantly methylated genes for each sample, and convert the hetylation data to a methylation aberrantion matrix
 load(file="....../data/metha.gene.Rdata") #methylation data
 DMG.matrix <- DMG(metha.gene) #methylation aberrantion matrix 
 
-
-###############construct the ssMutat-DM, ssMethy-DM and ssCo-DM for each patient 
+#construct the ssMutat-DM, ssMethy-DM and ssCo-DM for each patient 
 library(igraph)
 drive.net <- ss.drive.net(SSN, mutation.matrix, DMG.matrix, net)
 
-
-#############example of Drive network visualization for sample "TCGA.E2.A15J.01A"
-############or you can export the network and draw pictures in the cytoscape
+# example of Drive network visualization for sample "TCGA.E2.A15J.01A" or you can export the network and draw pictures in the cytoscape
 ssMutat.DM  <- drive.net[[1]][[1]]
 write.table(ssMutat.DM, file="ssMutat.DM.txt", row.names = F, col.names = F, quote=F)
 edges <- c(t(ssMutat.DM))
