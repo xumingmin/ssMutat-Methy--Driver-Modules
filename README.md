@@ -24,7 +24,7 @@ can be constructed using the 2-order network theory and hub-gene theory.
 
 
 
-Example
+# Example
 ############################################################################################
 #' @Example
 #' This text provides an example of construction sample-specific driver modules 
