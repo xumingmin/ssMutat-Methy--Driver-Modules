@@ -82,5 +82,6 @@ plot(ssco.DM.net)
 
 
 
---------------------------Contact---------------------------------------------
+# Contact
+
 If any problem or suggestion, please contact Meina Kan (chenyuanyuan@njau.edu.cn)
